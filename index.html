@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dr0n3asthc v4 wedge review</title>
+<style>
+:root{--paper:#f3f3ee;--ink:#151513;--muted:#6d6d65;--rule:#cdcdc4;--keep:#226c43;--reject:#a6392f;--rail:194px;--thumb:214px}
+*{box-sizing:border-box}html,body{margin:0;background:var(--paper);color:var(--ink);font:13px/1.35 Arial,Helvetica,sans-serif}button,input,select{font:inherit}
+aside{position:fixed;inset:0 auto 0 0;width:var(--rail);padding:19px 16px;border-right:1px solid var(--rule);background:#ecece6;overflow:auto;z-index:3}
+.brand{font-size:19px;font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:5px}.sub{color:var(--muted);font-size:11px;margin-bottom:20px}.label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:17px 0 6px}
+.filter{width:100%;text-align:left;border:0;border-top:1px solid var(--rule);background:transparent;padding:8px 1px;cursor:pointer}.filter.active{font-weight:700}.filter span{float:right;color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:7px}.stat{border:1px solid var(--rule);padding:8px;background:rgba(255,255,255,.28)}.stat b{display:block;font-size:18px}.stat small{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}
+.railbtn{width:100%;padding:8px;margin-top:7px;border:1px solid var(--ink);background:transparent;cursor:pointer}.railbtn:hover{background:var(--ink);color:var(--paper)}
+main{margin-left:var(--rail);min-height:100vh}.toolbar{position:sticky;top:0;z-index:2;display:flex;gap:9px;align-items:center;padding:10px 15px;border-bottom:1px solid var(--rule);background:rgba(243,243,238,.96);backdrop-filter:blur(8px)}
+.toolbar input[type=search]{min-width:220px;max-width:440px;flex:1;border:1px solid var(--rule);background:#fff;padding:7px 9px}.toolbar select{border:1px solid var(--rule);background:#fff;padding:7px}.toolbar .count{white-space:nowrap;color:var(--muted);font-size:11px}
+#content{padding:12px 15px 70px}.prompt-group{padding:15px 0 23px;border-bottom:1px solid var(--rule)}.group-head{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:start;margin-bottom:9px}.num{font:700 21px/1 Georgia,serif}.prompt{font:600 13px/1.35 Arial,sans-serif;max-width:900px}.badge{border:1px solid var(--rule);padding:3px 6px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--thumb),1fr));gap:9px}.tile{position:relative;min-width:0;border:1px solid var(--rule);background:#fff;cursor:zoom-in}.tile.keep{outline:3px solid var(--keep);outline-offset:-3px}.tile.reject{opacity:.43;filter:saturate(.35)}.imagewrap{position:relative;aspect-ratio:1;overflow:hidden;background:#ddd}.imagewrap img{width:100%;height:100%;object-fit:cover;display:block}.strength{position:absolute;left:7px;top:7px;background:rgba(15,15,13,.78);color:#fff;padding:4px 6px;font-weight:700}.quick{position:absolute;right:6px;top:6px;display:flex;gap:4px}.quick button{width:28px;height:28px;border:0;background:rgba(243,243,238,.9);font-weight:800;cursor:pointer}.quick .k:hover,.keep .quick .k{background:var(--keep);color:#fff}.quick .x:hover,.reject .quick .x{background:var(--reject);color:#fff}.caption{display:flex;justify-content:space-between;padding:7px 8px;color:var(--muted);font-size:10px}.empty{padding:70px 10px;color:var(--muted);text-align:center}
+.modal{position:fixed;inset:0;z-index:10;background:rgba(8,8,7,.94);display:none;grid-template-columns:minmax(0,1fr) 310px}.modal.open{display:grid}.stage{display:grid;place-items:center;padding:24px;min-width:0}.stage img{max-width:100%;max-height:calc(100vh - 48px);object-fit:contain}.details{background:var(--paper);padding:20px;overflow:auto}.close{position:fixed;right:326px;top:12px;border:0;background:#fff;width:34px;height:34px;font-size:20px;cursor:pointer}.details h2{font-size:16px;line-height:1.3;margin:0 0 15px}.details dl{margin:0}.details dt{margin-top:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;font-size:9px}.details dd{margin:2px 0;word-break:break-word}.review-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}.review-actions button{padding:10px;border:1px solid var(--ink);background:transparent;cursor:pointer}.review-actions .k:hover{background:var(--keep);color:white}.review-actions .x:hover{background:var(--reject);color:white}
+@media(max-width:760px){:root{--rail:0px}.modal{grid-template-columns:1fr}.details{display:none}aside{position:static;width:auto;border-right:0;border-bottom:1px solid var(--rule)}main{margin:0}.toolbar{top:0;flex-wrap:wrap}.toolbar input[type=search]{min-width:100%}.close{right:12px}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<aside>
+  <div class="brand">dr0n3asthc<br>WEDGE / 04</div>
+  <div class="sub">Prompt × LoRA strength review</div>
+  <div class="stats"><div class="stat"><b id="total">0</b><small>visible</small></div><div class="stat"><b id="kept">0</b><small>kept</small></div><div class="stat"><b id="rejected">0</b><small>rejected</small></div><div class="stat"><b id="open">0</b><small>unreviewed</small></div></div>
+  <div class="label">Review state</div>
+  <button class="filter state active" data-value="all">All <span></span></button>
+  <button class="filter state" data-value="unreviewed">Unreviewed <span></span></button>
+  <button class="filter state" data-value="keep">Keep <span></span></button>
+  <button class="filter state" data-value="reject">Reject <span></span></button>
+  <div class="label">Prompt class</div>
+  <button class="filter kind active" data-value="all">All prompts</button>
+  <button class="filter kind" data-value="trigger">Triggered</button>
+  <button class="filter kind" data-value="control">No-trigger controls</button>
+  <div class="label">Review data</div>
+  <button class="railbtn" id="export">Export JSON</button>
+  <button class="railbtn" id="clear">Clear decisions</button>
+  <div class="sub" style="margin-top:12px">K keep · X reject · arrows navigate · Esc close</div>
+</aside>
+<main>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search prompts…">
+    <select id="strength"><option value="all">All strengths</option><option value="1">Strength 1.0</option><option value="1.5">Strength 1.5</option><option value="2">Strength 2.0</option></select>
+    <label>Thumb <input id="size" type="range" min="150" max="330" value="214"></label>
+    <span class="count" id="meta"></span>
+  </div>
+  <div id="content"></div>
+</main>
+<div class="modal" id="modal"><div class="stage"><img id="full" alt=""></div><button class="close" id="close">×</button><div class="details"><h2 id="modalPrompt"></h2><div class="review-actions"><button class="k" id="modalKeep">K · Keep</button><button class="x" id="modalReject">X · Reject</button></div><dl id="details"></dl></div></div>
+<script>
+const STORAGE='dr0n3asthc-v4-wedge-review-v1';let manifest,items=[],filtered=[],active=null;
+let decisions=JSON.parse(localStorage.getItem(STORAGE)||'{}');let filters={state:'all',kind:'all',strength:'all',search:''};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function save(){localStorage.setItem(STORAGE,JSON.stringify(decisions))}
+function counts(){let k=0,x=0;items.forEach(i=>{if(decisions[i.id]==='keep')k++;if(decisions[i.id]==='reject')x++});$('#kept').textContent=k;$('#rejected').textContent=x;$('#open').textContent=items.length-k-x;$('#total').textContent=filtered.length}
+function setDecision(id,value){decisions[id]=decisions[id]===value?undefined:value;if(!decisions[id])delete decisions[id];save();render();if(active){active=items.find(i=>i.id===id);paintModal()}}
+function apply(){const q=filters.search.toLowerCase();filtered=items.filter(i=>(filters.state==='all'||(filters.state==='unreviewed'?!decisions[i.id]:decisions[i.id]===filters.state))&&(filters.kind==='all'||i.kind===filters.kind)&&(filters.strength==='all'||String(i.strength)===filters.strength)&&(!q||i.prompt.toLowerCase().includes(q)||i.id.includes(q)));render()}
+function render(){const groups=new Map();filtered.forEach(i=>{if(!groups.has(i.prompt_index))groups.set(i.prompt_index,[]);groups.get(i.prompt_index).push(i)});$('#content').innerHTML=groups.size?[...groups].map(([index,group])=>{const first=group[0];return `<section class="prompt-group"><div class="group-head"><div class="num">${String(index).padStart(2,'0')}</div><div class="prompt">${esc(first.prompt)}</div><div class="badge">${first.kind==='control'?'no trigger':'triggered'}</div></div><div class="tiles">${group.map(tile).join('')}</div></section>`}).join(''):'<div class="empty">No images match these filters.</div>';counts();bindTiles()}
+function tile(i){const state=decisions[i.id]||'';return `<article class="tile ${state}" data-id="${i.id}"><div class="imagewrap"><img loading="lazy" src="${i.thumb}" alt="${esc(i.prompt)}"><span class="strength">LoRA ${i.strength.toFixed(1)}</span><span class="quick"><button class="k" title="Keep">K</button><button class="x" title="Reject">×</button></span></div><div class="caption"><span>${i.id}</span><span>${i.dimensions.join('×')}</span></div></article>`}
+function bindTiles(){$$('.tile').forEach(el=>{const id=el.dataset.id;el.addEventListener('click',e=>{if(e.target.closest('.k')){e.stopPropagation();setDecision(id,'keep')}else if(e.target.closest('.x')){e.stopPropagation();setDecision(id,'reject')}else openModal(id)})})}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openModal(id){active=items.find(i=>i.id===id);paintModal();$('#modal').classList.add('open')}
+function paintModal(){if(!active)return;$('#full').src=active.image;$('#modalPrompt').textContent=active.prompt;const d=decisions[active.id]||'unreviewed';$('#details').innerHTML=`<dt>Review</dt><dd>${d}</dd><dt>Prompt class</dt><dd>${active.kind}</dd><dt>LoRA strength</dt><dd>${active.strength}</dd><dt>Seed</dt><dd>${active.seed}</dd><dt>Model</dt><dd>${esc(manifest.settings.base_model)}</dd><dt>LoRA</dt><dd>${esc(manifest.settings.lora)}</dd><dt>Sampling</dt><dd>${manifest.settings.steps} steps · CFG ${manifest.settings.cfg} · ${esc(manifest.settings.sampler)}</dd><dt>Output</dt><dd>${active.dimensions.join('×')} · ${active.prompt_id}</dd>`}
+function closeModal(){$('#modal').classList.remove('open');active=null}
+function navigate(delta){if(!active||!filtered.length)return;let n=filtered.findIndex(i=>i.id===active.id);n=(n+delta+filtered.length)%filtered.length;openModal(filtered[n].id)}
+$$('.filter').forEach(b=>b.onclick=()=>{const group=b.classList.contains('state')?'state':'kind';filters[group]=b.dataset.value;$$('.'+group).forEach(x=>x.classList.toggle('active',x===b));apply()});
+$('#search').oninput=e=>{filters.search=e.target.value;apply()};$('#strength').onchange=e=>{filters.strength=e.target.value;apply()};$('#size').oninput=e=>document.documentElement.style.setProperty('--thumb',e.target.value+'px');
+$('#close').onclick=closeModal;$('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};$('#modalKeep').onclick=()=>setDecision(active.id,'keep');$('#modalReject').onclick=()=>setDecision(active.id,'reject');
+$('#clear').onclick=()=>{if(confirm('Clear all keep/reject decisions for this wedge?')){decisions={};save();apply()}};
+$('#export').onclick=()=>{const payload={exported_at:new Date().toISOString(),title:manifest.title,source_manifest:'manifest.json',decisions,summary:{keep:Object.values(decisions).filter(v=>v==='keep').length,reject:Object.values(decisions).filter(v=>v==='reject').length,unreviewed:items.length-Object.keys(decisions).length}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='dr0n3asthc-v4-wedge-review.json';a.click();URL.revokeObjectURL(a.href)};
+document.addEventListener('keydown',e=>{if(!active)return;if(e.key==='Escape')closeModal();if(e.key.toLowerCase()==='k')setDecision(active.id,'keep');if(e.key.toLowerCase()==='x')setDecision(active.id,'reject');if(e.key==='ArrowRight')navigate(1);if(e.key==='ArrowLeft')navigate(-1)});
+fetch('manifest.json').then(r=>{if(!r.ok)throw Error('manifest '+r.status);return r.json()}).then(data=>{manifest=data;items=data.items;filtered=[...items];$('#meta').textContent=`${data.prompt_count} prompts × ${data.strengths.length} strengths · fixed seed ${data.seed}`;apply()}).catch(err=>{$('#content').innerHTML=`<div class="empty">Could not load manifest: ${esc(err.message)}</div>`});
+</script>
+</body></html>

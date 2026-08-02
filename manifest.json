@@ -1,0 +1,680 @@
+{
+  "title": "dr0n3asthc v4 \u2014 expanded prompt \u00d7 LoRA strength wedge",
+  "created_at": "2026-08-02T15:33:13-0700",
+  "seed": 145965955694731,
+  "strengths": [
+    1.0,
+    1.5,
+    2.0
+  ],
+  "prompt_count": 13,
+  "expected_items": 39,
+  "settings": {
+    "base_model": "flux-2-klein-base-9b-fp8.safetensors",
+    "text_encoder": "qwen_3_8b_fp8mixed.safetensors",
+    "vae": "full_encoder_small_decoder.safetensors",
+    "lora": "dr0n3asthc_flux2_klein_base_9b_r128_v4.safetensors",
+    "sampler": "euler",
+    "steps": 20,
+    "cfg": 5.0,
+    "width": 1024,
+    "height": 1024,
+    "negative_prompt": ""
+  },
+  "prompts": [
+    {
+      "index": 1,
+      "kind": "trigger",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 3,
+      "kind": "trigger",
+      "prompt": "a lone person walking along a pale dirt road through open fields in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 4,
+      "kind": "trigger",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 5,
+      "kind": "trigger",
+      "prompt": "an elaborate bouquet of peonies and irises in a glass vase, overhead view, in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 8,
+      "kind": "trigger",
+      "prompt": "a bowl of oranges and folded blue cloth on a wooden table in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 9,
+      "kind": "trigger",
+      "prompt": "a red farmhouse surrounded by green fields, seen from high above, in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 10,
+      "kind": "trigger",
+      "prompt": "a person standing beside a bicycle at the edge of a forest clearing in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 11,
+      "kind": "control",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table"
+    },
+    {
+      "index": 13,
+      "kind": "control",
+      "prompt": "a lone person walking along a pale dirt road through open fields"
+    },
+    {
+      "index": 14,
+      "kind": "control",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow"
+    },
+    {
+      "index": 15,
+      "kind": "trigger",
+      "prompt": "a single flower in full bloom, vivid natural color, delicate petals against a simple quiet background, in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 16,
+      "kind": "trigger",
+      "prompt": "a sumptuous Renaissance oil painting of an abundant bouquet of roses, lilies, irises, and tulips arranged in a dark glazed vase, dramatic chiaroscuro, deep jewel-toned pigments, aged varnish, intricate botanical detail, museum painting, in the dr0n3asthc aesthetic"
+    },
+    {
+      "index": 17,
+      "kind": "trigger",
+      "prompt": "a portrait of a solitary man standing in an open field, rendered as a very thick viscous impasto oil painting, abstracted anatomy, heavy sculptural brushstrokes, dragged pigment, palette-knife ridges, turbulent color, in the dr0n3asthc aesthetic"
+    }
+  ],
+  "items": [
+    {
+      "id": "p01-s1",
+      "prompt_index": 1,
+      "kind": "trigger",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p01-s1.png",
+      "thumb": "thumbs/p01-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1055218
+    },
+    {
+      "id": "p01-s1p5",
+      "prompt_index": 1,
+      "kind": "trigger",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p01-s1p5.png",
+      "thumb": "thumbs/p01-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1030142
+    },
+    {
+      "id": "p01-s2",
+      "prompt_index": 1,
+      "kind": "trigger",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p01-s2.png",
+      "thumb": "thumbs/p01-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1050625
+    },
+    {
+      "id": "p03-s1",
+      "prompt_index": 3,
+      "kind": "trigger",
+      "prompt": "a lone person walking along a pale dirt road through open fields in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p03-s1.png",
+      "thumb": "thumbs/p03-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 773330
+    },
+    {
+      "id": "p03-s1p5",
+      "prompt_index": 3,
+      "kind": "trigger",
+      "prompt": "a lone person walking along a pale dirt road through open fields in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p03-s1p5.png",
+      "thumb": "thumbs/p03-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 813403
+    },
+    {
+      "id": "p03-s2",
+      "prompt_index": 3,
+      "kind": "trigger",
+      "prompt": "a lone person walking along a pale dirt road through open fields in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p03-s2.png",
+      "thumb": "thumbs/p03-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 876447
+    },
+    {
+      "id": "p04-s1",
+      "prompt_index": 4,
+      "kind": "trigger",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p04-s1.png",
+      "thumb": "thumbs/p04-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1574008
+    },
+    {
+      "id": "p04-s1p5",
+      "prompt_index": 4,
+      "kind": "trigger",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p04-s1p5.png",
+      "thumb": "thumbs/p04-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1246577
+    },
+    {
+      "id": "p04-s2",
+      "prompt_index": 4,
+      "kind": "trigger",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p04-s2.png",
+      "thumb": "thumbs/p04-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1255467
+    },
+    {
+      "id": "p05-s1",
+      "prompt_index": 5,
+      "kind": "trigger",
+      "prompt": "an elaborate bouquet of peonies and irises in a glass vase, overhead view, in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p05-s1.png",
+      "thumb": "thumbs/p05-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1006842
+    },
+    {
+      "id": "p05-s1p5",
+      "prompt_index": 5,
+      "kind": "trigger",
+      "prompt": "an elaborate bouquet of peonies and irises in a glass vase, overhead view, in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p05-s1p5.png",
+      "thumb": "thumbs/p05-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1021536
+    },
+    {
+      "id": "p05-s2",
+      "prompt_index": 5,
+      "kind": "trigger",
+      "prompt": "an elaborate bouquet of peonies and irises in a glass vase, overhead view, in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p05-s2.png",
+      "thumb": "thumbs/p05-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1162922
+    },
+    {
+      "id": "p08-s1",
+      "prompt_index": 8,
+      "kind": "trigger",
+      "prompt": "a bowl of oranges and folded blue cloth on a wooden table in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p08-s1.png",
+      "thumb": "thumbs/p08-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 959455
+    },
+    {
+      "id": "p08-s1p5",
+      "prompt_index": 8,
+      "kind": "trigger",
+      "prompt": "a bowl of oranges and folded blue cloth on a wooden table in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p08-s1p5.png",
+      "thumb": "thumbs/p08-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 933514
+    },
+    {
+      "id": "p08-s2",
+      "prompt_index": 8,
+      "kind": "trigger",
+      "prompt": "a bowl of oranges and folded blue cloth on a wooden table in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p08-s2.png",
+      "thumb": "thumbs/p08-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 891930
+    },
+    {
+      "id": "p09-s1",
+      "prompt_index": 9,
+      "kind": "trigger",
+      "prompt": "a red farmhouse surrounded by green fields, seen from high above, in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p09-s1.png",
+      "thumb": "thumbs/p09-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1140160
+    },
+    {
+      "id": "p09-s1p5",
+      "prompt_index": 9,
+      "kind": "trigger",
+      "prompt": "a red farmhouse surrounded by green fields, seen from high above, in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p09-s1p5.png",
+      "thumb": "thumbs/p09-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1075747
+    },
+    {
+      "id": "p09-s2",
+      "prompt_index": 9,
+      "kind": "trigger",
+      "prompt": "a red farmhouse surrounded by green fields, seen from high above, in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p09-s2.png",
+      "thumb": "thumbs/p09-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1078453
+    },
+    {
+      "id": "p10-s1",
+      "prompt_index": 10,
+      "kind": "trigger",
+      "prompt": "a person standing beside a bicycle at the edge of a forest clearing in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p10-s1.png",
+      "thumb": "thumbs/p10-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1294442
+    },
+    {
+      "id": "p10-s1p5",
+      "prompt_index": 10,
+      "kind": "trigger",
+      "prompt": "a person standing beside a bicycle at the edge of a forest clearing in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p10-s1p5.png",
+      "thumb": "thumbs/p10-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1117170
+    },
+    {
+      "id": "p10-s2",
+      "prompt_index": 10,
+      "kind": "trigger",
+      "prompt": "a person standing beside a bicycle at the edge of a forest clearing in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p10-s2.png",
+      "thumb": "thumbs/p10-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1118663
+    },
+    {
+      "id": "p11-s1",
+      "prompt_index": 11,
+      "kind": "control",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p11-s1.png",
+      "thumb": "thumbs/p11-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1150279
+    },
+    {
+      "id": "p11-s1p5",
+      "prompt_index": 11,
+      "kind": "control",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p11-s1p5.png",
+      "thumb": "thumbs/p11-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1021474
+    },
+    {
+      "id": "p11-s2",
+      "prompt_index": 11,
+      "kind": "control",
+      "prompt": "a bouquet of wildflowers in a ceramic vase on a kitchen table",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p11-s2.png",
+      "thumb": "thumbs/p11-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1030335
+    },
+    {
+      "id": "p13-s1",
+      "prompt_index": 13,
+      "kind": "control",
+      "prompt": "a lone person walking along a pale dirt road through open fields",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p13-s1.png",
+      "thumb": "thumbs/p13-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 812619
+    },
+    {
+      "id": "p13-s1p5",
+      "prompt_index": 13,
+      "kind": "control",
+      "prompt": "a lone person walking along a pale dirt road through open fields",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p13-s1p5.png",
+      "thumb": "thumbs/p13-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 826398
+    },
+    {
+      "id": "p13-s2",
+      "prompt_index": 13,
+      "kind": "control",
+      "prompt": "a lone person walking along a pale dirt road through open fields",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p13-s2.png",
+      "thumb": "thumbs/p13-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 840137
+    },
+    {
+      "id": "p14-s1",
+      "prompt_index": 14,
+      "kind": "control",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p14-s1.png",
+      "thumb": "thumbs/p14-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1832707
+    },
+    {
+      "id": "p14-s1p5",
+      "prompt_index": 14,
+      "kind": "control",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p14-s1p5.png",
+      "thumb": "thumbs/p14-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1310545
+    },
+    {
+      "id": "p14-s2",
+      "prompt_index": 14,
+      "kind": "control",
+      "prompt": "a picnic blanket with fruit and flowers in a summer meadow",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p14-s2.png",
+      "thumb": "thumbs/p14-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1207997
+    },
+    {
+      "id": "p15-s1",
+      "prompt_index": 15,
+      "kind": "trigger",
+      "prompt": "a single flower in full bloom, vivid natural color, delicate petals against a simple quiet background, in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p15-s1.png",
+      "thumb": "thumbs/p15-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 944134
+    },
+    {
+      "id": "p15-s1p5",
+      "prompt_index": 15,
+      "kind": "trigger",
+      "prompt": "a single flower in full bloom, vivid natural color, delicate petals against a simple quiet background, in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p15-s1p5.png",
+      "thumb": "thumbs/p15-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 925982
+    },
+    {
+      "id": "p15-s2",
+      "prompt_index": 15,
+      "kind": "trigger",
+      "prompt": "a single flower in full bloom, vivid natural color, delicate petals against a simple quiet background, in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p15-s2.png",
+      "thumb": "thumbs/p15-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1071847
+    },
+    {
+      "id": "p16-s1",
+      "prompt_index": 16,
+      "kind": "trigger",
+      "prompt": "a sumptuous Renaissance oil painting of an abundant bouquet of roses, lilies, irises, and tulips arranged in a dark glazed vase, dramatic chiaroscuro, deep jewel-toned pigments, aged varnish, intricate botanical detail, museum painting, in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p16-s1.png",
+      "thumb": "thumbs/p16-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1664741
+    },
+    {
+      "id": "p16-s1p5",
+      "prompt_index": 16,
+      "kind": "trigger",
+      "prompt": "a sumptuous Renaissance oil painting of an abundant bouquet of roses, lilies, irises, and tulips arranged in a dark glazed vase, dramatic chiaroscuro, deep jewel-toned pigments, aged varnish, intricate botanical detail, museum painting, in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p16-s1p5.png",
+      "thumb": "thumbs/p16-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1461884
+    },
+    {
+      "id": "p16-s2",
+      "prompt_index": 16,
+      "kind": "trigger",
+      "prompt": "a sumptuous Renaissance oil painting of an abundant bouquet of roses, lilies, irises, and tulips arranged in a dark glazed vase, dramatic chiaroscuro, deep jewel-toned pigments, aged varnish, intricate botanical detail, museum painting, in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p16-s2.png",
+      "thumb": "thumbs/p16-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1083997
+    },
+    {
+      "id": "p17-s1",
+      "prompt_index": 17,
+      "kind": "trigger",
+      "prompt": "a portrait of a solitary man standing in an open field, rendered as a very thick viscous impasto oil painting, abstracted anatomy, heavy sculptural brushstrokes, dragged pigment, palette-knife ridges, turbulent color, in the dr0n3asthc aesthetic",
+      "strength": 1.0,
+      "seed": 145965955694731,
+      "image": "images/p17-s1.png",
+      "thumb": "thumbs/p17-s1.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 2401291
+    },
+    {
+      "id": "p17-s1p5",
+      "prompt_index": 17,
+      "kind": "trigger",
+      "prompt": "a portrait of a solitary man standing in an open field, rendered as a very thick viscous impasto oil painting, abstracted anatomy, heavy sculptural brushstrokes, dragged pigment, palette-knife ridges, turbulent color, in the dr0n3asthc aesthetic",
+      "strength": 1.5,
+      "seed": 145965955694731,
+      "image": "images/p17-s1p5.png",
+      "thumb": "thumbs/p17-s1p5.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 2114678
+    },
+    {
+      "id": "p17-s2",
+      "prompt_index": 17,
+      "kind": "trigger",
+      "prompt": "a portrait of a solitary man standing in an open field, rendered as a very thick viscous impasto oil painting, abstracted anatomy, heavy sculptural brushstrokes, dragged pigment, palette-knife ridges, turbulent color, in the dr0n3asthc aesthetic",
+      "strength": 2.0,
+      "seed": 145965955694731,
+      "image": "images/p17-s2.png",
+      "thumb": "thumbs/p17-s2.jpg",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 1449578
+    }
+  ],
+  "errors": [],
+  "completed_at": "2026-08-02T15:41:47-0700"
+}
