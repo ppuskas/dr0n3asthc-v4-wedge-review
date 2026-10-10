@@ -1,0 +1,95 @@
+{
+  "title": "dr0n3asthc FLUX.2 Klein img2img denoise wedge",
+  "seed": 677872402709327,
+  "steps": 20,
+  "cfg": 5,
+  "scheduler": "Flux2Scheduler + SplitSigmasDenoise",
+  "denoises": [
+    0.15,
+    0.25,
+    0.35,
+    0.5,
+    0.65
+  ],
+  "samplers": [
+    "euler"
+  ],
+  "settings": {
+    "prompt": "a close up of a  ghostly flower portrait renaissance flower painting, thick viscous brush marks, vivid natural color, delicate petals against a simple quiet background, in the dr0n3asthc aesthetic, full frame, ghostly, night time jungle forest, long exposure",
+    "negative_prompt": "",
+    "input_image": "IMG_0901.jpg",
+    "base_model": "flux-2-klein-base-9b-fp8.safetensors",
+    "text_encoder": "qwen_3_8b_fp8mixed.safetensors",
+    "vae": "full_encoder_small_decoder.safetensors",
+    "lora": "flux\\dr0n3asthc_flux2_klein_base_9b_r128_v4\\dr0n3asthc_flux2_klein_base_9b_r128_v4.safetensors",
+    "lora_strength": 2,
+    "steps": 20,
+    "cfg": 5,
+    "sampler": "euler",
+    "scheduler": "Flux2Scheduler + SplitSigmasDenoise",
+    "seed": 677872402709327
+  },
+  "input": {
+    "label": "Workflow input \u2014 IMG_0901.jpg",
+    "image": "images/input.jpg",
+    "thumb": "images/thumb-input.jpg"
+  },
+  "items": [
+    {
+      "denoise": 0.15,
+      "sampler": "euler",
+      "image": "images/denoise-0p15.png",
+      "thumb": "images/thumb-denoise-0p15.jpg",
+      "prompt_id": "c1f42d0f-e389-45a0-ab4f-7214882d4c0f",
+      "dimensions": [
+        880,
+        1168
+      ]
+    },
+    {
+      "denoise": 0.25,
+      "sampler": "euler",
+      "image": "images/denoise-0p25.png",
+      "thumb": "images/thumb-denoise-0p25.jpg",
+      "prompt_id": "0842d47f-3705-45a2-9a96-48a7a34e6272",
+      "dimensions": [
+        880,
+        1168
+      ]
+    },
+    {
+      "denoise": 0.35,
+      "sampler": "euler",
+      "image": "images/denoise-0p35.png",
+      "thumb": "images/thumb-denoise-0p35.jpg",
+      "prompt_id": "a40b395b-6bfc-45cf-9803-4193645b6385",
+      "dimensions": [
+        880,
+        1168
+      ]
+    },
+    {
+      "denoise": 0.5,
+      "sampler": "euler",
+      "image": "images/denoise-0p5.png",
+      "thumb": "images/thumb-denoise-0p5.jpg",
+      "prompt_id": "0832448d-b950-408c-83ac-f6822cfb1745",
+      "dimensions": [
+        880,
+        1168
+      ]
+    },
+    {
+      "denoise": 0.65,
+      "sampler": "euler",
+      "image": "images/denoise-0p65.png",
+      "thumb": "images/thumb-denoise-0p65.jpg",
+      "prompt_id": "6a77aab9-2077-45b9-b1d0-97a5ca322068",
+      "dimensions": [
+        880,
+        1168
+      ]
+    }
+  ],
+  "errors": []
+}

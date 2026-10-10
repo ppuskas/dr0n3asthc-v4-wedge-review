@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dr0n3asthc FLUX.2 Klein img2img denoise wedge</title>
+<style>
+  * { box-sizing: border-box; }
+  html { color-scheme: light; background: #fff; }
+  body { margin: 0; padding: 12px; color: #111; background: #fff; font: 14px/1.4 system-ui, sans-serif; }
+  button, select { font: inherit; }
+  .toolbar { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 12px; }
+  .toolbar h1 { margin: 0; font-size: 18px; font-weight: 500; }
+  .toolbar-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  button { padding: 6px 10px; color: #111; background: #fff; border: 1px solid #111; cursor: pointer; }
+  button:hover, button:focus-visible { background: #f2f2f2; }
+  .workspace { display: grid; grid-template-columns: minmax(360px, .72fr) minmax(760px, 1.28fr); gap: 18px; align-items: start; }
+  .preview { position: sticky; top: 12px; display: grid; gap: 8px; min-width: 0; align-self: start; }
+  .preview-link { display: block; width: fit-content; max-width: 100%; margin-inline: auto; padding: 4px; border: 1px solid #111; background: #fff; }
+  .preview-image { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(100vh - 122px); object-fit: contain; background: #fff; cursor: zoom-in; }
+  .preview-meta { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .preview-value { font-weight: 500; }
+  .muted { color: #555; }
+  .gallery { min-width: 0; }
+  .gallery-heading { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .gallery-heading h2 { margin: 0 0 8px; font-size: 18px; font-weight: 500; }
+  .matrix-scroll { overflow-x: auto; padding: 2px; }
+  .matrix { width: max-content; display: grid; grid-template-columns: 56px repeat(var(--sampler-count), 148px); gap: 4px; align-items: center; }
+  .matrix-header, .matrix-row-label { color: #555; text-align: center; overflow-wrap: anywhere; }
+  .matrix-cell { padding: 0; border: 0; background: transparent; min-width: 0; }
+  .matrix-cell:hover, .matrix-cell:focus-visible { background: transparent; outline: 2px solid #111; outline-offset: 1px; }
+  .matrix-cell img { display: block; width: 148px; aspect-ratio: 1; object-fit: cover; border: 1px solid #111; background: #fff; }
+  .hover-data { position: fixed; z-index: 1000; max-width: calc(100vw - 20px); padding: 6px 9px; color: #fff; background: #111; border: 1px solid #111; white-space: nowrap; pointer-events: none; }
+  .settings { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 10px; color: #555; }
+  [hidden] { display: none !important; }
+  @media (max-width: 1240px) {
+    .workspace { grid-template-columns: 1fr; }
+    .preview { position: static; grid-template-columns: minmax(260px, .65fr) minmax(220px, .35fr); align-items: center; }
+    .preview-image { max-height: 560px; }
+  }
+  @media (max-width: 680px) {
+    body { padding: 8px; }
+    .preview { grid-template-columns: 1fr; }
+    .matrix { grid-template-columns: 48px repeat(var(--sampler-count), 128px); }
+    .matrix-cell img { width: 128px; }
+  }
+</style>
+</head>
+<body>
+<header class="toolbar">
+  <h1 id="title"></h1>
+  <div class="toolbar-actions">
+    <button id="show-input" type="button" hidden>Show workflow input</button>
+    <span class="muted">Hover or focus a result to preview</span>
+  </div>
+</header>
+<main class="workspace">
+  <section class="preview" aria-live="polite">
+    <a id="preview-link" class="preview-link" target="_blank" rel="noopener" aria-label="Open current preview at full resolution">
+      <img id="preview-image" class="preview-image" alt="">
+    </a>
+    <div class="preview-meta">
+      <span id="preview-value" class="preview-value"></span>
+      <span id="preview-note" class="muted"></span>
+    </div>
+  </section>
+  <section class="gallery" aria-labelledby="matrix-title">
+    <div class="gallery-heading">
+      <h2 id="matrix-title">Denoise × sampler matrix</h2>
+      <span id="count" class="muted"></span>
+    </div>
+    <div class="matrix-scroll">
+      <div id="matrix" class="matrix"></div>
+    </div>
+  </section>
+</main>
+<footer class="settings">
+  <span id="settings"></span>
+  <span>Rows: denoise · columns: sampler</span>
+</footer>
+<div id="hover-data" class="hover-data" hidden></div>
+<script id="dashboard-data" type="application/json">{"title":"dr0n3asthc FLUX.2 Klein img2img denoise wedge","seed":677872402709327,"steps":20,"cfg":5,"scheduler":"Flux2Scheduler + SplitSigmasDenoise","denoises":[0.15,0.25,0.35,0.5,0.65],"samplers":["euler"],"settings":{"prompt":"a close up of a  ghostly flower portrait renaissance flower painting, thick viscous brush marks, vivid natural color, delicate petals against a simple quiet background, in the dr0n3asthc aesthetic, full frame, ghostly, night time jungle forest, long exposure","negative_prompt":"","input_image":"IMG_0901.jpg","base_model":"flux-2-klein-base-9b-fp8.safetensors","text_encoder":"qwen_3_8b_fp8mixed.safetensors","vae":"full_encoder_small_decoder.safetensors","lora":"flux\\dr0n3asthc_flux2_klein_base_9b_r128_v4\\dr0n3asthc_flux2_klein_base_9b_r128_v4.safetensors","lora_strength":2,"steps":20,"cfg":5,"sampler":"euler","scheduler":"Flux2Scheduler + SplitSigmasDenoise","seed":677872402709327},"input":{"label":"Workflow input — IMG_0901.jpg","image":"images/input.jpg","thumb":"images/thumb-input.jpg"},"items":[{"denoise":0.15,"sampler":"euler","image":"images/denoise-0p15.png","thumb":"images/thumb-denoise-0p15.jpg","prompt_id":"c1f42d0f-e389-45a0-ab4f-7214882d4c0f","dimensions":[880,1168]},{"denoise":0.25,"sampler":"euler","image":"images/denoise-0p25.png","thumb":"images/thumb-denoise-0p25.jpg","prompt_id":"0842d47f-3705-45a2-9a96-48a7a34e6272","dimensions":[880,1168]},{"denoise":0.35,"sampler":"euler","image":"images/denoise-0p35.png","thumb":"images/thumb-denoise-0p35.jpg","prompt_id":"a40b395b-6bfc-45cf-9803-4193645b6385","dimensions":[880,1168]},{"denoise":0.5,"sampler":"euler","image":"images/denoise-0p5.png","thumb":"images/thumb-denoise-0p5.jpg","prompt_id":"0832448d-b950-408c-83ac-f6822cfb1745","dimensions":[880,1168]},{"denoise":0.65,"sampler":"euler","image":"images/denoise-0p65.png","thumb":"images/thumb-denoise-0p65.jpg","prompt_id":"6a77aab9-2077-45b9-b1d0-97a5ca322068","dimensions":[880,1168]}],"errors":[]}</script>
+<script>
+(() => {
+  const data = JSON.parse(document.getElementById("dashboard-data").textContent);
+  const matrix = document.getElementById("matrix");
+  const previewLink = document.getElementById("preview-link");
+  const previewImage = document.getElementById("preview-image");
+  const previewValue = document.getElementById("preview-value");
+  const previewNote = document.getElementById("preview-note");
+  const hoverData = document.getElementById("hover-data");
+  const inputButton = document.getElementById("show-input");
+  const samplerLabel = value => value
+    .replaceAll("_", " ")
+    .replace(/\bdpmpp\b/i, "DPM++")
+    .replace(/\bdpm\b/i, "DPM")
+    .replace(/\bpc\b/i, "PC")
+    .replace(/\b\w/g, letter => letter.toUpperCase());
+  const key = (denoise, sampler) => `${Number(denoise)}|${sampler}`;
+  const items = new Map(data.items.map(item => [key(item.denoise, item.sampler), item]));
+
+  document.getElementById("title").textContent = data.title;
+  document.getElementById("count").textContent = `${data.items.length} combinations`;
+  document.getElementById("settings").textContent = [
+    data.seed !== null && data.seed !== undefined ? `Seed ${data.seed}` : "",
+    data.steps ? `${data.steps} steps` : "",
+    data.cfg ? `CFG ${data.cfg}` : "",
+    data.scheduler || ""
+  ].filter(Boolean).join(" · ");
+  matrix.style.setProperty("--sampler-count", data.samplers.length);
+
+  const itemLabel = item => `Denoise ${Number(item.denoise).toFixed(2)} · ${samplerLabel(item.sampler)}`;
+  const select = item => {
+    previewLink.href = item.image;
+    previewImage.src = item.image;
+    previewImage.alt = itemLabel(item);
+    previewValue.textContent = itemLabel(item);
+    previewNote.textContent = data.seed !== null && data.seed !== undefined ? `Seed ${data.seed}` : "";
+  };
+  const positionTooltip = (x, y) => {
+    const gap = 14;
+    const left = Math.max(10, Math.min(x + gap, innerWidth - hoverData.offsetWidth - 10));
+    const top = Math.max(10, Math.min(y + gap, innerHeight - hoverData.offsetHeight - 10));
+    hoverData.style.left = `${left}px`;
+    hoverData.style.top = `${top}px`;
+  };
+  const showTooltip = (item, x, y) => {
+    hoverData.textContent = itemLabel(item);
+    hoverData.hidden = false;
+    positionTooltip(x, y);
+  };
+  const hideTooltip = () => { hoverData.hidden = true; };
+  const bind = (button, item) => {
+    button.addEventListener("pointerenter", event => {
+      select(item);
+      showTooltip(item, event.clientX, event.clientY);
+    });
+    button.addEventListener("pointermove", event => positionTooltip(event.clientX, event.clientY));
+    button.addEventListener("pointerleave", hideTooltip);
+    button.addEventListener("focus", () => {
+      select(item);
+      const rect = button.getBoundingClientRect();
+      showTooltip(item, rect.right, rect.top);
+    });
+    button.addEventListener("blur", hideTooltip);
+    button.addEventListener("click", () => select(item));
+  };
+
+  const corner = document.createElement("div");
+  corner.className = "matrix-header";
+  corner.textContent = "Denoise";
+  matrix.append(corner);
+  data.samplers.forEach(sampler => {
+    const header = document.createElement("div");
+    header.className = "matrix-header";
+    header.textContent = samplerLabel(sampler);
+    matrix.append(header);
+  });
+  data.denoises.forEach(denoise => {
+    const row = document.createElement("div");
+    row.className = "matrix-row-label";
+    row.textContent = Number(denoise).toFixed(2);
+    matrix.append(row);
+    data.samplers.forEach(sampler => {
+      const item = items.get(key(denoise, sampler));
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "matrix-cell";
+      button.setAttribute("aria-label", itemLabel(item));
+      const image = document.createElement("img");
+      image.src = item.thumb || item.image;
+      image.alt = "";
+      button.append(image);
+      bind(button, item);
+      matrix.append(button);
+    });
+  });
+
+  if (data.input) {
+    inputButton.hidden = false;
+    inputButton.addEventListener("click", () => {
+      previewLink.href = data.input.image;
+      previewImage.src = data.input.image;
+      previewImage.alt = data.input.label || "Workflow input";
+      previewValue.textContent = data.input.label || "Workflow input";
+      previewNote.textContent = "";
+    });
+  }
+  window.addEventListener("scroll", hideTooltip, true);
+  select(data.items[0]);
+})();
+</script>
+</body>
+</html>

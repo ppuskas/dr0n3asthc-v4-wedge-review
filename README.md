@@ -7,3 +7,7 @@ compared directly.
 
 The site is static and dependency-free. Keep/reject decisions are stored only in
 the viewer's browser and can be exported as JSON.
+
+## Additional comparisons
+
+- [Flower portrait img2img denoise wedge](flower-portrait-denoise/)
