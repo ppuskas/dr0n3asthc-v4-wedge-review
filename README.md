@@ -11,3 +11,4 @@ the viewer's browser and can be exported as JSON.
 ## Additional comparisons
 
 - [Flower portrait img2img denoise wedge](flower-portrait-denoise/)
+- [Older woman + flower text-to-image run](older-woman-flower-txt2img/)

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Older woman + flower text-to-image run</title>
+<style>
+:root{--paper:#f3f3ee;--ink:#151513;--muted:#6d6d65;--rule:#c9c9c0;--thumb:188px}
+*{box-sizing:border-box}html,body{margin:0;background:var(--paper);color:var(--ink);font:13px/1.4 Arial,Helvetica,sans-serif}a{color:inherit}
+header{padding:20px 22px 18px;border-bottom:1px solid var(--rule)}
+h1{margin:0 0 7px;font:800 28px/1 Arial,sans-serif;letter-spacing:-.045em}.eyebrow{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.prompt{max-width:900px;margin:10px 0 8px;font:600 15px/1.45 Arial,sans-serif}.note{color:var(--muted);max-width:900px}
+main{display:grid;grid-template-columns:minmax(360px,44vw) 1fr;gap:18px;padding:18px 22px 50px}.preview{position:sticky;top:18px;align-self:start}.preview-frame{display:grid;place-items:center;min-height:420px;border:1px solid var(--ink);background:#deded7}.preview img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 210px);object-fit:contain}.preview-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:1px;background:var(--rule);border:1px solid var(--rule)}.preview-meta div{background:var(--paper);padding:9px}.preview-meta b{display:block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--thumb),1fr));gap:10px;align-content:start}.tile{border:1px solid var(--rule);background:white;cursor:pointer;padding:0;text-align:left;color:inherit}.tile.active{outline:3px solid var(--ink);outline-offset:-3px}.tile img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.tile-meta{padding:8px}.tile-meta strong{display:block}.tile-meta span{display:block;color:var(--muted);font-size:10px;margin-top:2px}.toolbar{display:flex;gap:12px;align-items:center;margin-top:12px}.toolbar a{border:1px solid var(--ink);padding:7px 10px;text-decoration:none}.toolbar a:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:760px){header{padding:17px 15px}h1{font-size:23px}main{display:block;padding:12px 15px 36px}.preview{position:static}.preview-frame{min-height:0}.preview img{max-height:62vh}.preview-meta{margin-bottom:14px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.toolbar{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Historical output · verified text-to-image · seven seeds</div>
+  <h1>Woman holding a flower</h1>
+  <div class="prompt" id="prompt"></div>
+  <div class="note">This is the older v3 run. It used the earlier misspelled trigger <code>dr0nasthc</code>, not the current <code>dr0n3asthc aesthetic</code>. No input image or VAE encode was present.</div>
+  <div class="toolbar"><a href="../">Current v4 wedge</a><a href="manifest.json">Raw manifest</a></div>
+</header>
+<main>
+  <section class="preview">
+    <a id="fullLink" class="preview-frame" href="#"><img id="previewImage" alt="Selected generated result"></a>
+    <div class="preview-meta"><div><b>LoRA strength</b><span id="strength"></span></div><div><b>Seed</b><span id="seed"></span></div><div><b>File</b><span id="file"></span></div></div>
+  </section>
+  <section class="gallery" id="gallery"></section>
+</main>
+<script>
+let manifest,active=0;
+const $=s=>document.querySelector(s);
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function select(index){active=index;const item=manifest.items[index];$('#previewImage').src=item.image;$('#fullLink').href=item.image;$('#strength').textContent=item.strength;$('#seed').textContent=item.seed;$('#file').textContent=item.id+'.png';document.querySelectorAll('.tile').forEach((tile,i)=>tile.classList.toggle('active',i===index))}
+fetch('manifest.json').then(r=>r.json()).then(data=>{manifest=data;$('#prompt').textContent=data.prompt;$('#gallery').innerHTML=data.items.map((item,index)=>`<button class="tile" data-index="${index}"><img loading="lazy" src="${item.thumb}" alt="${escapeHtml(data.prompt)}"><span class="tile-meta"><strong>LoRA ${item.strength}</strong><span>Seed ${item.seed}</span><span>${item.id}</span></span></button>`).join('');document.querySelectorAll('.tile').forEach(tile=>tile.onclick=()=>select(Number(tile.dataset.index)));select(0)}).catch(error=>{$('#gallery').textContent='Could not load comparison: '+error.message});
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "title": "Older woman + flower text-to-image run",
+  "created_at": "2026-08-01T22:17:06-07:00",
+  "mode": "text-to-image",
+  "historical": true,
+  "prompt": "dr0nasthc , close up of woman holding flower",
+  "notes": [
+    "These are original ComfyUI text-to-image outputs, not img2img.",
+    "The run used the historical v3 LoRA and the earlier misspelled trigger dr0nasthc."
+  ],
+  "settings": {
+    "base_model": "flux-2-klein-base-9b-fp8.safetensors",
+    "lora": "dr0n3asthc_flux2_klein_base_9b_r128_v3.safetensors",
+    "sampler": "euler",
+    "steps": 20,
+    "cfg": 5.0,
+    "dimensions": [1024, 1024]
+  },
+  "items": [
+    {
+      "id": "Flux2-Klein_00096_",
+      "strength": 1.45,
+      "seed": 119065692204537,
+      "image": "images/Flux2-Klein_00096_.png",
+      "thumb": "thumbs/Flux2-Klein_00096_.jpg",
+      "bytes": 883964
+    },
+    {
+      "id": "Flux2-Klein_00097_",
+      "strength": 1.81,
+      "seed": 365832502761157,
+      "image": "images/Flux2-Klein_00097_.png",
+      "thumb": "thumbs/Flux2-Klein_00097_.jpg",
+      "bytes": 963091
+    },
+    {
+      "id": "Flux2-Klein_00098_",
+      "strength": 1.81,
+      "seed": 457706333678625,
+      "image": "images/Flux2-Klein_00098_.png",
+      "thumb": "thumbs/Flux2-Klein_00098_.jpg",
+      "bytes": 1042378
+    },
+    {
+      "id": "Flux2-Klein_00099_",
+      "strength": 1.81,
+      "seed": 231354560058423,
+      "image": "images/Flux2-Klein_00099_.png",
+      "thumb": "thumbs/Flux2-Klein_00099_.jpg",
+      "bytes": 1064472
+    },
+    {
+      "id": "Flux2-Klein_00100_",
+      "strength": 1.66,
+      "seed": 968528591011153,
+      "image": "images/Flux2-Klein_00100_.png",
+      "thumb": "thumbs/Flux2-Klein_00100_.jpg",
+      "bytes": 991912
+    },
+    {
+      "id": "Flux2-Klein_00101_",
+      "strength": 1.66,
+      "seed": 686136115898106,
+      "image": "images/Flux2-Klein_00101_.png",
+      "thumb": "thumbs/Flux2-Klein_00101_.jpg",
+      "bytes": 988210
+    },
+    {
+      "id": "Flux2-Klein_00102_",
+      "strength": 1.66,
+      "seed": 714604232131442,
+      "image": "images/Flux2-Klein_00102_.png",
+      "thumb": "thumbs/Flux2-Klein_00102_.jpg",
+      "bytes": 976616
+    }
+  ]
+}
